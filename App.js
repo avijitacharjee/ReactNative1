@@ -26,6 +26,18 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 class App extends React.Component {
+  constructor ()
+  {
+    super();
+    this.state = {
+      sampleText: 'Initial Text'
+    };
+    
+  }
+  ch = () => 
+    {
+      this.setState({sampleText: 'Avijit Acharjee'})
+    }
 render () {
   return (
     <>
@@ -41,7 +53,10 @@ render () {
            }}/>
           <Text style ={{
             fontSize : 30
-          }}>Hello World</Text>
+          }}
+          onPress = {this.ch}>
+            {this.state.sampleText}
+            </Text>
           <Button title="Change text" />
         </ScrollView>
       </SafeAreaView>
